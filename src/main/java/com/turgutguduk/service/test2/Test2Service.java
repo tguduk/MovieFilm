@@ -1,6 +1,6 @@
 package com.turgutguduk.service.test2;
 
-import com.turgutguduk.model.test2.Test2;
+import com.turgutguduk.model.Test3;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import java.util.List;
 public interface Test2Service
 {
 
-    public Test2 create(Test2 test2);
-    public Test2 delete(int id);
-    public List<Test2> findAll();
-    public Test2 update(Test2 test2);
-    public Test2 findById(int id);
+    public Test3 create(Test3 test3);
+    public Test3 delete(int id);
+    public List<Test3> findAll();
+    public Test3 update(Test3 test3);
+    public Test3 findById(int id);
 }

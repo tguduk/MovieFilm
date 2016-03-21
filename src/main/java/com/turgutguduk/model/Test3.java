@@ -15,8 +15,6 @@ public class Test3 {
 
     private String name;
 
-    @Column(name = "employees_number")
-    private Integer emplNumber;
 
     public Integer getId() {
         return id;
@@ -34,11 +32,4 @@ public class Test3 {
         this.name = name;
     }
 
-    public Integer getEmplNumber() {
-        return emplNumber;
-    }
-
-    public void setEmplNumber(Integer emplNumber) {
-        this.emplNumber = emplNumber;
-    }
 }

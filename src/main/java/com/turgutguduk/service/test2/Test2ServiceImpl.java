@@ -1,6 +1,6 @@
 package com.turgutguduk.service.test2;
 
-import com.turgutguduk.model.test2.Test2;
+import com.turgutguduk.model.Test3;
 import com.turgutguduk.repository.test2.Test2Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,32 +17,32 @@ public class Test2ServiceImpl implements  Test2Service
 
     @Override
     @Transactional
-    public Test2 create(Test2 test2)
+    public Test3 create(Test3 test3)
     {
-        return test2Repository.saveAndFlush(test2);
+        return test2Repository.saveAndFlush(test3);
     }
 
     @Override
     @Transactional
-    public Test2 delete(int id) {
+    public Test3 delete(int id) {
         return null;
     }
 
     @Override
     @Transactional
-    public List<Test2> findAll() {
+    public List<Test3> findAll() {
         return test2Repository.findAll();
     }
 
     @Override
     @Transactional
-    public Test2 update(Test2 test2) {
-        return test2Repository.save(test2);
+    public Test3 update(Test3 test3) {
+        return test2Repository.save(test3);
     }
 
     @Override
     @Transactional
-    public Test2 findById(int id) {
+    public Test3 findById(int id) {
         return test2Repository.findOne(id);
     }
 }
