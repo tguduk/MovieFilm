@@ -11,10 +11,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by turgut on 21.03.2016.
  */
 
-//Configuration
+@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
-    /*@Override
+    @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/assets/**").addResourceLocations("classpath:/META-INF/resources/webjars/").setCachePeriod(31556926);
         registry.addResourceHandler("/css/**").addResourceLocations("/css/").setCachePeriod(31556926);
@@ -26,7 +26,7 @@ public class WebConfig extends WebMvcConfigurerAdapter {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-
+/*
   /*  @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
