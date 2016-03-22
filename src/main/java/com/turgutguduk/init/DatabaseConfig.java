@@ -14,11 +14,10 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.view.JstlView;
-import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
-@Configuration
-@EnableTransactionManagement
+
+//@Configuration
+//@EnableTransactionManagement
 public class DatabaseConfig
 {
 
@@ -78,6 +77,7 @@ public class DatabaseConfig
         transactionManager.setSessionFactory(sessionFactory().getObject());
         return transactionManager;
     }
+
 
 
 }

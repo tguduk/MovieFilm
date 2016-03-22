@@ -1,0 +1,10 @@
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (1,'The Shawshank Redemption','Crime', '9.2',1994);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (2,'The Godfather','Crime','9.2',1972);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (3,'The Godfather: Part II','Crime','9.0',1974);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (4,'The Dark Knight','Action','8.9',2008);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (5,'Schindlers List','Drama', '8.9',1993);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (6,'Fight Club','Drama','8.9',1999);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (7,'The Lord of the Rings: The Return of the King','Fantasy','8.9',2003);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (8,'Star Wars: Episode V - The Empire Strikes Back','Fantasy','8.8',1980);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (9,'Forrest Gump','Subramanian','8.8',1994);
+INSERT INTO Movie(id,name,category,point,create_year) VALUES (10,'The Matrix','Action','8.7',1999);

@@ -1,26 +1,32 @@
 package com.turgutguduk.controller;
 
-import com.turgutguduk.model.Test3;
-import com.turgutguduk.service.test2.Test2ServiceImpl;
+import com.turgutguduk.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.List;
 
 @Controller
-public class HomeController {
+public class HomeController
+{
 
     @Autowired
-    Test2ServiceImpl test2Service;
+    private MovieService movieService;
 
     @RequestMapping("/")
     public ModelAndView index()
     {
-        List<Test3> list = test2Service.findAll();
-        ModelAndView mav = new ModelAndView("index");
-        mav.addObject("movielist", list);
-        return mav;
+        ModelAndView mv = new ModelAndView("home/index");
+        System.out.printf("size : .");
+        mv.addObject("list",movieService.findAll().size());
+        return mv;
+    }
+
+    @RequestMapping("/test")
+    public String test()
+    {
+        System.out.printf("test : .");
+        return "test";
     }
 }
