@@ -10,7 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController
 {
-
     @Autowired
     private MovieService movieService;
 
@@ -19,7 +18,7 @@ public class HomeController
     {
         ModelAndView mv = new ModelAndView("home/index");
         System.out.printf("size : .");
-        mv.addObject("list",movieService.findAll().size());
+        mv.addObject("list",movieService.findAll().get(0).getName());
         return mv;
     }
 

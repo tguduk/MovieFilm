@@ -1,4 +1,4 @@
-package com.turgutguduk.init;
+package com.turgutguduk;
 
 /**
  * Created by turgut on 19.03.2016.

@@ -2,9 +2,9 @@ package com.turgutguduk.service;
 
 import com.turgutguduk.model.Movie;
 import com.turgutguduk.repository.MovieRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class MovieServiceImpl implements MovieService
 {
-    @Resource
+    @Autowired
     private MovieRepository movieRepository;
 
     @Transactional
@@ -45,7 +45,7 @@ public class MovieServiceImpl implements MovieService
     @Override
     public Movie update(Movie movie)
     {
-        Movie updatedMovie =movieRepository.findOne(movie.getId());
+        Movie updatedMovie = movieRepository.findOne(movie.getId());
         return updatedMovie;
     }
 
@@ -54,5 +54,10 @@ public class MovieServiceImpl implements MovieService
     public Movie findById(int id)
     {
         return movieRepository.getOne(id);
+    }
+
+    @Override
+    public List<Movie> findByName(String name) {
+        return null;
     }
 }
