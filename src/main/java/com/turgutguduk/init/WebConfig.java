@@ -1,18 +1,17 @@
 package com.turgutguduk.init;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  * Created by turgut on 21.03.2016.
  */
 
 @Configuration
-public class WebConfig extends WebMvcConfigurerAdapter {
+public class WebConfig extends WebMvcConfigurerAdapter
+{
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -27,8 +26,6 @@ public class WebConfig extends WebMvcConfigurerAdapter {
         configurer.enable();
     }
 
-
-/*
   /*  @Bean
     public InternalResourceViewResolver getInternalResourceViewResolver() {
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();

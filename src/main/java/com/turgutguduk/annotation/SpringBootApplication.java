@@ -1,5 +1,6 @@
 package com.turgutguduk.annotation;
 
+import com.turgutguduk.constant.SystemConstant;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.orm.jpa.EntityScan;
 import org.springframework.cache.annotation.EnableCaching;
@@ -22,7 +23,7 @@ import java.lang.annotation.*;
 @Configuration
 @EnableAutoConfiguration
 @EnableCaching
-@ComponentScan(basePackages = "com.turgutguduk")
+@ComponentScan(basePackages = SystemConstant.PROPERTY_NAME_BASE_PACKAGE)
 public @interface SpringBootApplication
 {
     Class<?>[] exclude() default {};
