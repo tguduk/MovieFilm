@@ -8,7 +8,22 @@
 
 <div class="container">
     <div class="hero-unit">
-        <strong th:text="${list}"></strong>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>CATEGORY</th>
+                <th>PUAN</th>
+                <th>YIL</th>
+            </tr>
+            <tr th:each="data, row: ${list}">
+                <td th:text="${data.id}">></td>
+                <td th:text="${data.name}">></td>
+                <td th:text="${data.category}">></td>
+                <td th:text="${data.point}">></td>
+                <td th:text="${data.createYear}">></td>
+            </tr>
+        </table>
     </div>
 </div>
 </body>

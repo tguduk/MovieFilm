@@ -1,10 +1,13 @@
 package com.turgutguduk.controller;
 
+import com.turgutguduk.model.Movie;
 import com.turgutguduk.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.List;
 
 
 @Controller
@@ -18,7 +21,8 @@ public class HomeController
     {
         ModelAndView mv = new ModelAndView("home/index");
         System.out.printf("size : .");
-        mv.addObject("list",movieService.findAll().get(0).getName());
+        List<Movie> list = movieService.findAll();
+        mv.addObject("list",list);
         return mv;
     }
 
