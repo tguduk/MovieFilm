@@ -1,9 +1,6 @@
 package com.turgutguduk.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.NamedQuery;
+import javax.persistence.*;
 import java.io.Serializable;
 
 /**
@@ -12,7 +9,7 @@ import java.io.Serializable;
 
 
 @Entity
-@NamedQuery(name="Movie.findByName",query="select b from Movie b where b.name=?1")
+@Table(name = "movie")
 public class Movie implements Serializable
 {
     private static final long serialVersionUID = 1L;
