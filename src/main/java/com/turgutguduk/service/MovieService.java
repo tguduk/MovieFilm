@@ -1,6 +1,7 @@
 package com.turgutguduk.service;
 
-import com.turgutguduk.model.Movie;
+import com.turgutguduk.dto.MovieDTO;
+import com.turgutguduk.entities.Movie;
 
 import java.util.List;
 
@@ -9,10 +10,10 @@ import java.util.List;
  */
 public interface MovieService
 {
-    public Movie create(Movie movie);
-    public Movie delete(int id);
-    public List<Movie> findAll();
-    public Movie update(Movie movie);
-    public Movie findById(int id);
-    public List<Movie> findByName(String name);
+     MovieDTO create(Movie movie);
+     MovieDTO delete(Long id);
+     List<MovieDTO> findAll();
+     MovieDTO update(Movie movie);
+     MovieDTO findById(Long id);
+     List<MovieDTO> findByName(String name);
 }
