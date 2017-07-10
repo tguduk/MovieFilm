@@ -8,10 +8,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.lang.annotation.*;
 
-/**
- * Created by turgut on 19.03.2016.
- */
-
 
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)

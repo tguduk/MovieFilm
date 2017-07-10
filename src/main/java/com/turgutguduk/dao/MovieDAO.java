@@ -6,12 +6,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by turgut on 22.03.2016.
- */
 
 @Service
-public interface MovieDAO extends CrudRepository<Movie,Long>
-{
+public interface MovieDAO extends CrudRepository<Movie,Long> {
     List<Movie> findAll();
 }

@@ -10,13 +10,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
-/**
- * Created by turgut on 22.03.2016.
- */
-
 @Service
-public class MovieServiceImpl implements MovieService
-{
+public class MovieServiceImpl implements MovieService {
     @Autowired
     private MovieDAO movieDAO;
 

@@ -8,12 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.io.Serializable;
 
-/**
- * Created by turgut on 22.03.2016.
- */
-
-
-
 @Data
 @Builder
 @AllArgsConstructor

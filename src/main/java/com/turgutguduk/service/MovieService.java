@@ -5,11 +5,7 @@ import com.turgutguduk.entities.Movie;
 
 import java.util.List;
 
-/**
- * Created by turgut on 22.03.2016.
- */
-public interface MovieService
-{
+public interface MovieService {
      MovieDTO create(Movie movie);
      MovieDTO delete(Long id);
      List<MovieDTO> findAll();

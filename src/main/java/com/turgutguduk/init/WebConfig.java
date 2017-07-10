@@ -5,10 +5,6 @@ import org.springframework.web.servlet.config.annotation.DefaultServletHandlerCo
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
-/**
- * Created by turgut on 21.03.2016.
- */
-
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter
 {

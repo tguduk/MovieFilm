@@ -12,7 +12,7 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.4.RELEASE</version>
-        <relativePath />
+        <relativePath/>
     </parent>
 
     <properties>
@@ -30,44 +30,45 @@
         <!--
              if you run mysql db comment out mysql dependency ,comment out DatabaseConfig  and  comment in h2 db pom.xml file
              last step change your connection string in  application.properties file
-              !! Delete /Resources/schema.sql and  /Resources/data.sql
+              !! Delete /Resources/schema.sql and  /Resources/data.sql-->
+        <!--
+               <dependency>
+                   <groupId>mysql</groupId>
+                   <artifactId>mysql-connector-java</artifactId>
+               </dependency>
+         -->
+
 
         <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-        </dependency>-->
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
 
-             <dependency>
-                 <groupId>com.h2database</groupId>
-                 <artifactId>h2</artifactId>
-             </dependency>
-             <dependency>
-                 <groupId>com.h2database</groupId>
-                 <artifactId>h2</artifactId>
-             </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-             <dependency>
-                 <groupId>org.springframework.boot</groupId>
-                 <artifactId>spring-boot-starter-cache</artifactId>
-             </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
 
-             <dependency>
-                 <groupId>org.springframework.boot</groupId>
-                 <artifactId>spring-boot-starter-web</artifactId>
-             </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
 
-             <dependency>
-                 <groupId>org.springframework.boot</groupId>
-                 <artifactId>spring-boot-starter-actuator</artifactId>
-             </dependency>
-
-             <dependency>
-                 <groupId>org.springframework.boot</groupId>
-                 <artifactId>spring-boot-starter-thymeleaf</artifactId>
-             </dependency>
-
-             <!-- WebJars -->
+        <!-- WebJars -->
         <dependency>
             <groupId>org.webjars</groupId>
             <artifactId>bootstrap</artifactId>
