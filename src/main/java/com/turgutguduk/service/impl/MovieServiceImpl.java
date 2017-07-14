@@ -1,17 +1,21 @@
 package com.turgutguduk.service.impl;
 
+import com.turgutguduk.dao.MovieDAO;
 import com.turgutguduk.dto.MovieDTO;
 import com.turgutguduk.entities.Movie;
-import com.turgutguduk.dao.MovieDAO;
 import com.turgutguduk.mapper.MovieMapper;
 import com.turgutguduk.service.MovieService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
+@Component
 public class MovieServiceImpl implements MovieService {
+
     @Autowired
     private MovieDAO movieDAO;
 
