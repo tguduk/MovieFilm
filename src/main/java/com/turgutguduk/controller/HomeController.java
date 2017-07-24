@@ -6,40 +6,36 @@ import com.turgutguduk.service.MovieService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.net.MalformedURLException;
 import java.util.List;
 
 
-@Controller
+@RestController
 public class HomeController {
+
+//    @Value("${sumologic.accessId}")
+
+    //    private int myNumber;
+//    @Value("${my.number}")
+//
+//    private String accessKey;
+//    @Value("${sumologic.accessKey}")
+//
+//    private String accessId;
 
     @Autowired
     private MovieService movieService;
 
-    @Value("${sumologic.accessId}")
-    private String accessId;
-
-    @Value("${sumologic.accessKey}")
-    private String accessKey;
-
-    @Value("${my.number}")
-    private int myNumber;
 
     private static final Logger LOGGER = LoggerFactory.getLogger("jobs");
 
-    @RequestMapping(MovieFilmUrlConstant.INDEX)
-    public ModelAndView index() throws MalformedURLException {
-        ModelAndView mv = new ModelAndView("home/index");
+    @RequestMapping(value = MovieFilmUrlConstant.INDEX)
+    public List<MovieDTO> index() throws MalformedURLException {
         List<MovieDTO> list = movieService.findAll();
-        //GetCollectorsResponse collectors = smc.getCollectors();
-        //SumoLogicClient smc = new SumoLogicClient(new Credentials(accessId, accessKey));
-        mv.addObject("list", list);
-        return mv;
+        return list;
     }
 
     @RequestMapping("/test")
