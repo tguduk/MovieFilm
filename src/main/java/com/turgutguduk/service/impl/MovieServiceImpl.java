@@ -5,6 +5,7 @@ import com.turgutguduk.dto.MovieDTO;
 import com.turgutguduk.entities.Movie;
 import com.turgutguduk.mapper.MovieMapper;
 import com.turgutguduk.service.MovieService;
+import com.turgutguduk.service.RedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,9 @@ public class MovieServiceImpl implements MovieService {
     @Autowired
     private MovieMapper movieMapper;
 
+    @Autowired
+    private RedisService redisService;
+
     @Transactional
     @Override
     public MovieDTO create(Movie movie)
@@ -30,7 +34,6 @@ public class MovieServiceImpl implements MovieService {
         return movieMapper.convertDTO(save);
     }
 
-    @Transactional
     @Override
     public MovieDTO delete(Long id)
     {
@@ -40,7 +43,6 @@ public class MovieServiceImpl implements MovieService {
         return movieMapper.convertDTO(deletedMovie);
     }
 
-    @Transactional
     @Override
     public List<MovieDTO> findAll()
     {
@@ -55,7 +57,6 @@ public class MovieServiceImpl implements MovieService {
         return movieMapper.convertDTO(updatedMovie);
     }
 
-    @Transactional
     @Override
     public MovieDTO findById(Long id)
     {

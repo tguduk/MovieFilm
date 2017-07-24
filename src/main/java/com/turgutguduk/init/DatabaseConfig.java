@@ -11,8 +11,6 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 
-//@Configuration
-//@EnableTransactionManagement
 public class DatabaseConfig
 {
 
@@ -72,7 +70,5 @@ public class DatabaseConfig
         transactionManager.setSessionFactory(sessionFactory().getObject());
         return transactionManager;
     }
-
-
 
 }
