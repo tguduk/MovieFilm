@@ -26,6 +26,8 @@ public class MovieServiceImpl implements MovieService {
     @Autowired
     private RedisService redisService;
 
+    private static final String REDIS_KEY ="FILMLIST";
+
     @Transactional
     @Override
     public MovieDTO create(Movie movie)
@@ -46,6 +48,9 @@ public class MovieServiceImpl implements MovieService {
     @Override
     public List<MovieDTO> findAll()
     {
+        List<MovieDTO> movieDTOS = movieMapper.converDTOList(movieDAO.findAll());
+        redisService.setValue(REDIS_KEY,movieDTOS);
+        System.out.println(redisService.getValue(REDIS_KEY));
         return movieMapper.converDTOList(movieDAO.findAll());
     }
 

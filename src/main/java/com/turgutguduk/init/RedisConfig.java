@@ -1,19 +1,13 @@
 package com.turgutguduk.init;
 
+import com.turgutguduk.config.SpringSessionRedisConfiguration;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.data.redis.cache.RedisCacheManager;
-import org.springframework.data.redis.connection.RedisConnectionFactory;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
-import org.springframework.data.redis.core.RedisTemplate;
 
 @Configuration
 @EnableCaching
-public class RedisConfig extends CachingConfigurerSupport {
+public class RedisConfig extends SpringSessionRedisConfiguration {
 
     @Value("${redis.database.index}")
     private int redisDatabaseIndex;
@@ -24,33 +18,36 @@ public class RedisConfig extends CachingConfigurerSupport {
     @Value("${redis.database.port}")
     private int redisDatabasePort;
 
-    @Bean
-    public CacheManager cacheManager(RedisTemplate redisTemplate) {
-        RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
 
-        // Number of seconds before expiration. Defaults to unlimited (0)
-        cacheManager.setDefaultExpiration(300);
-        return cacheManager;
+    @Value("${redis.timeToLive}")
+    private long timeToLive;
+
+//    @Bean(name="redisTemplate")
+//    public RedisTemplate<String, Object> getRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+//        RedisTemplate<String, Object> template = new RedisTemplate<>();
+//        template.setConnectionFactory(redisConnectionFactory);
+//        return template;
+//    }
+//
+//    @Bean
+//    public CacheManager cacheManager(RedisTemplate redisTemplate) {
+//        RedisCacheManager cacheManager = new RedisCacheManager(redisTemplate);
+//        cacheManager.setDefaultExpiration(timeToLive);
+//        return cacheManager;
+//    }
+
+    @Override
+    public String getRedisHost() {
+        return redisDatabaseHostName;
     }
 
-    @Bean
-    public RedisConnectionFactory getConnection() {
-        JedisConnectionFactory  factory = new JedisConnectionFactory();
-        factory.setDatabase(redisDatabaseIndex);
-        factory.setHostName(redisDatabaseHostName);
-        factory.setPort(redisDatabasePort);
-        return factory;
+    @Override
+    public String getRedisPort() {
+        return String.valueOf(redisDatabasePort);
     }
 
-    @Bean
-    public RedisTemplate<String, Object> getRedisTemplate(RedisConnectionFactory getConnection) {
-        RedisTemplate<String, Object> template = new RedisTemplate<>();
-        template.setConnectionFactory(getConnection);
-        return template;
+    @Override
+    public long getTimeToLive() {
+        return timeToLive;
     }
-
-
-
-
-
 }
